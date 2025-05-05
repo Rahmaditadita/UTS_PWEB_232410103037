@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Dashboard</h2>
-<p>Selamat datang, {{ $username ?? 'User' }}!</p>
+    <div class="dashboard">
+        <h1>Selamat datang, {{ $username }}!</h1>
+        <p>Ini adalah halaman dashboard.</p>
+    </div>
 @endsection

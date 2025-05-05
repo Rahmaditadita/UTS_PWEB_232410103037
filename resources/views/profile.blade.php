@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Profile</h2>
-<p>Ini adalah halaman profile dari <strong>{{ $username ?? 'User' }}</strong>.</p>
+    <div class="profile">
+        <h1>Profile: {{ $username }}</h1>
+        <p>Ini adalah halaman profil kamu.</p>
+    </div>
 @endsection
