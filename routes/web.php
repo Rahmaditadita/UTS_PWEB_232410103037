@@ -1,19 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 
-// Halaman landing
-Route::get('/landing', [PageController::class, 'landing']);
+Route::get('/landing', [PageController::class, 'landing'])->name('landing');
+Route::get('/login', [PageController::class, 'login'])->name('login');
 
-// Halaman login
-Route::get('/login', [PageController::class, 'login'])->name('login'); // Memberikan nama pada route login
+// Tidak ada post login
+Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
+Route::get('/profile', [PageController::class, 'profile'])->name('profile');
+Route::get('/pengelolaan', [PageController::class, 'pengelolaan'])->name('pengelolaan');
 
-// Proses login
-Route::post('/login', [PageController::class, 'loginSubmit']);
-
-// Halaman dashboard (hanya bisa diakses jika sudah login)
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [PageController::class, 'dashboard']);
-    Route::get('/profile', [PageController::class, 'profile']);
-    Route::get('/pengelolaan', [PageController::class, 'pengelolaan']);
-});

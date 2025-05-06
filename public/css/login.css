@@ -55,6 +55,12 @@ body {
     color: #00d5ff;
 }
 
+.warning-text {
+    color: red;
+    font-size: 12px;
+    display: none; /* Menyembunyikan peringatan secara default */
+}
+
 .login-box {
     flex: 1;
     padding: 40px;

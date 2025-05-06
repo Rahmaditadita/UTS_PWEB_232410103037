@@ -35,6 +35,8 @@ class PageController extends Controller
         return redirect('/login')->withErrors(['login' => 'Invalid credentials']);
     }
 
+
+
     // Menampilkan halaman dashboard
     public function dashboard()
     {

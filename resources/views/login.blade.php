@@ -20,15 +20,17 @@
     <div class="container">
         <div class="login-box">
             <h2>Login</h2>
-            <form action="#" method="POST">
+            <form id="loginForm" action="#" method="POST">
                 @csrf
-                <input type="text" name="username" placeholder="Username" required id="username">
+                <input type="text" name="username" id="username" placeholder="Username" required>
+                <p id="username-warning" class="warning-text">Harap wajib diisi</p>
 
-                <!-- Password input dengan ikon mata -->
                 <div class="password-container">
-                    <input type="password" name="password" placeholder="Password" required id="password">
+                    <input type="password" name="password" id="password" placeholder="Password" required minlength="8">
                     <i class="fas fa-eye" id="togglePassword" onclick="togglePassword()"></i>
                 </div>
+                <p id="password-warning" class="warning-text">Password harus lebih dari 8 karakter</p>
+                <p id="password-required-warning" class="warning-text">Harap wajib diisi</p>
 
                 <button type="submit" id="loginButton" disabled>Login</button>
             </form>
@@ -38,7 +40,6 @@
         </div>
     </div>
 
-    <!-- Memanggil file JavaScript -->
     <script src="{{ asset('js/login.js') }}"></script>
 </body>
 </html>
