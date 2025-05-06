@@ -65,17 +65,20 @@ header {
 .text-galeri h2 {
     font-size: 55px !important;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     margin-top: 10px;
-    margin-left: 80px;
+    margin-left: 0;
+    width: 100%;
 }
 
 .text-galeri h3 {
     font-size: 30px !important;
-    text-align: left;
+    text-align: center;
     margin-top: -30px;
-    margin-left: 80px;
+    margin-left: 0;
+    width: 100%;
 }
+
 
 /* === GAMBAR GALERI KEGIATAN === */
 .gambar {
@@ -117,7 +120,7 @@ header {
 .jadwal-wrapper {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: left;
+    /* justify-content: center; */
     align-items: center;
     gap: 3vw;
     flex-wrap: wrap;
@@ -127,9 +130,8 @@ header {
 #schedule img {
     width: 100%;
     max-width: 600px;
-    margin-top: -20px;
-    margin-left: 30px;
 }
+
 
 /* === JADWAL PERTEMUAN === */
 #jadwal {
@@ -142,12 +144,13 @@ header {
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    margin-left: -6px;
+    margin: 50px auto; /* Ubah margin-left menjadi auto */
     display: flex;
     flex-direction: column;
-    justify-content: center
+    align-items: center;
+    justify-content: center;
 }
+
 
 /* Styling untuk judul */
 #jadwal h3 {

@@ -1,0 +1,78 @@
+/* Profile Card Styles */
+.profile-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    margin-bottom: 2rem;
+}
+
+.profile-header {
+    background-color: #4a6baf;
+    color: white;
+    padding: 1.25rem;
+}
+
+.profile-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.profile-body {
+    padding: 1.5rem;
+}
+
+/* Welcome Message */
+.welcome-message h3 {
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.welcome-message p {
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+.username {
+    color: #4a6baf;
+    font-weight: 600;
+}
+
+/* Action Buttons */
+.profile-actions {
+    margin-top: 1.5rem;
+}
+
+.profile-actions .btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.375rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.profile-actions .btn-primary {
+    background-color: #4a6baf;
+    border-color: #4a6baf;
+}
+
+.profile-actions .btn-primary:hover {
+    background-color: #3a5a9f;
+    border-color: #3a5a9f;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .profile-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .profile-body {
+        padding: 1rem;
+    }
+}

@@ -7,51 +7,130 @@ use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
-    // Menampilkan halaman landing
-    public function landing()
-    {
-        return view('landing');
-    }
-
-    // Menampilkan halaman login
     public function login()
     {
-        return view('login'); // pastikan sudah ada file login.blade.php
+        return view('login');
     }
-
-    // Proses login
     public function loginSubmit(Request $request)
     {
-        // Validasi input
-        $credentials = $request->only('username', 'password');
-
-        // Cek kredensial pengguna
-        if (Auth::attempt($credentials)) {
-            // Jika login berhasil, alihkan ke halaman dashboard
-            return redirect()->intended('/dashboard');
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+        if ($request->username === 'Hanna-lee' && $request->password === '1234567') {
+            // Redirect ke dashboard dengan query parameter
+            return redirect()->route('dashboard', ['username' => $request->username]);
         }
 
-        // Jika gagal, kembali ke halaman login dengan pesan error
-        return redirect('/login')->withErrors(['login' => 'Invalid credentials']);
+        return back()->withErrors(['error' => 'Username atau password salah']);
     }
-
-
-
     // Menampilkan halaman dashboard
-    public function dashboard()
+    public function dashboard(Request $request)
     {
-        return view('dashboard');
+        $username = $request->query('username', 'Hanna-lee');
+
+        return view('dashboard', [
+            'username' => $username
+        ]);
     }
 
-    // Menampilkan halaman profile
-    public function profile()
-    {
-        return view('profile');
-    }
-
-    // Menampilkan halaman pengelolaan
     public function pengelolaan()
     {
-        return view('pengelolaan');
+        $jadwalPertemuan = [
+            'Senin' => [
+                [
+                    'tanggal' => '2023-10-30',
+                    'mata_pelajaran' => 'Matematika',
+                    'lokasi' => 'Ruang A1',
+                    'platform' => 'Offline',
+                    'jam' => '08:00-10:00'
+                ],
+                [
+                    'tanggal' => '2023-10-30',
+                    'mata_pelajaran' => 'Kimia',
+                    'lokasi' => 'Lab Kimia',
+                    'platform' => 'Offline',
+                    'jam' => '13:00-15:00'
+                ]
+            ],
+            'Selasa' => [
+                [
+                    'tanggal' => '2023-10-31',
+                    'mata_pelajaran' => 'Bahasa Indonesia',
+                    'lokasi' => 'Ruang B2',
+                    'platform' => 'Offline',
+                    'jam' => '09:00-11:00'
+                ],
+                [
+                    'tanggal' => '2023-10-31',
+                    'mata_pelajaran' => 'Sejarah',
+                    'lokasi' => 'Zoom Meeting',
+                    'platform' => 'Online',
+                    'link' => 'https://zoom.us/j/111222333',
+                    'jam' => '14:00-16:00'
+                ]
+            ],
+            'Rabu' => [
+                [
+                    'tanggal' => '2023-11-01',
+                    'mata_pelajaran' => 'Bahasa Inggris',
+                    'lokasi' => 'Zoom Meeting',
+                    'platform' => 'Online',
+                    'link' => 'https://zoom.us/j/123456789',
+                    'jam' => '10:00-12:00'
+                ],
+                [
+                    'tanggal' => '2023-11-01',
+                    'mata_pelajaran' => 'Ekonomi',
+                    'lokasi' => 'Ruang C3',
+                    'platform' => 'Offline',
+                    'jam' => '15:00-17:00'
+                ]
+            ],
+            'Kamis' => [
+                [
+                    'tanggal' => '2023-11-02',
+                    'mata_pelajaran' => 'Fisika',
+                    'lokasi' => 'Lab IPA',
+                    'platform' => 'Offline',
+                    'jam' => '08:00-10:00'
+                ],
+                [
+                    'tanggal' => '2023-11-02',
+                    'mata_pelajaran' => 'Seni Budaya',
+                    'lokasi' => 'Aula',
+                    'platform' => 'Offline',
+                    'jam' => '13:00-15:00'
+                ]
+            ],
+            'Jumat' => [
+                [
+                    'tanggal' => '2023-11-03',
+                    'mata_pelajaran' => 'Fisika',
+                    'lokasi' => 'Lab IPA',
+                    'platform' => 'Offline',
+                    'jam' => '09:00-11:00'
+                ],
+                [
+                    'tanggal' => '2023-11-03',
+                    'mata_pelajaran' => 'Olahraga',
+                    'lokasi' => 'Lapangan',
+                    'platform' => 'Offline',
+                    'jam' => '14:00-16:00'
+                ]
+            ]
+        ];
+
+        return view('pengelolaan', ['jadwalPertemuan' => $jadwalPertemuan]);
+    }
+
+    public function profile(Request $request)
+    {
+        // Ambil username dari query parameter, default 'Guest' jika tidak ada
+        $username = $request->query('username', 'Guest');
+
+        return view('profile', [
+            'username' => $username
+        ]);
     }
 }
