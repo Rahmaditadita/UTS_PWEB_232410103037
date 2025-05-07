@@ -2,29 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
+    private $validCredentials = [
+        'username' => 'Hanna-lee',
+        'password' => '12345678'
+    ];
     public function login()
     {
         return view('login');
     }
+    
     public function loginSubmit(Request $request)
     {
         $request->validate([
-            'username' => 'required',
-            'password' => 'required',
+            'username' => 'required|string',
+            'password' => 'required|string'
         ]);
-        if ($request->username === 'Hanna-lee' && $request->password === '1234567') {
-            // Redirect ke dashboard dengan query parameter
+
+        if ($request->username === $this->validCredentials['username'] &&
+            $request->password === $this->validCredentials['password']) {
             return redirect()->route('dashboard', ['username' => $request->username]);
         }
 
-        return back()->withErrors(['error' => 'Username atau password salah']);
+        return back()->withErrors([
+            'error' => 'Username atau password salah'
+        ])->withInput($request->only('username'));
     }
-    // Menampilkan halaman dashboard
+
     public function dashboard(Request $request)
     {
         $username = $request->query('username', 'Hanna-lee');
@@ -126,11 +135,26 @@ class PageController extends Controller
 
     public function profile(Request $request)
     {
-        // Ambil username dari query parameter, default 'Guest' jika tidak ada
-        $username = $request->query('username', 'Guest');
+        $username = $request->query('username', 'Hanna-lee');
+        $password = '********';
 
         return view('profile', [
-            'username' => $username
+            'username' => $username,
+            'password' => $password
         ]);
     }
+
+        public function show()
+    {
+        return view('profile');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login');
+    }
+
 }

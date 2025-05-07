@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column; /* Agar main-header di atas container */
+    flex-direction: column;
 }
 
 .main-header {
@@ -43,7 +43,7 @@ body {
 }
 
 .password-container input {
-    padding-right: 30px; /* Memberikan ruang untuk ikon di sebelah kanan */
+    padding-right: 30px;
 }
 
 .password-container i {
@@ -58,7 +58,7 @@ body {
 .warning-text {
     color: red;
     font-size: 12px;
-    display: none; /* Menyembunyikan peringatan secara default */
+    display: none;
 }
 
 .login-box {
@@ -101,7 +101,7 @@ body {
     object-fit: cover;
 }
 
-/* ✅ RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;

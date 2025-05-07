@@ -109,63 +109,6 @@ html {
     color: #ffdd57;
 }
 
-
-
-/* .logout-btn {
-    background: none;
-    border: none;
-    color: #170606;
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.logout-btn:hover {
-    color: #ffdd57;
-}
-
-/* Modal Styles */
-/* .logout-modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    justify-content: center;
-    align-items: center;
-}
-
-.logout-modal-content {
-    background-color: #fefefe;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 300px;
-    width: 100%;
-}
-
-.confirm-logout-btn, .cancel-logout-btn {
-    padding: 8px 20px;
-    margin: 10px 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.confirm-logout-btn {
-    background-color: #ff4444;
-    color: white;
-}
-
-.cancel-logout-btn {
-    background-color: #ccc;
-} */
-
 /* Responsive */
 @media (max-width: 768px) {
     .navbar-container {

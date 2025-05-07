@@ -1,4 +1,4 @@
-/* === FONT CUSTOM === */
+/* FONT CUSTOM */
 @font-face {
     font-family: 'headerfont';
     src: url('assets/font/Exodus.otf') format('opentype');
@@ -9,7 +9,7 @@
     src: url('assets/font/Exotic.otf') format('opentype');
 }
 
-/* === STYLING BODY === */
+/* STYLING BODY  */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,7 +18,7 @@ body {
     min-height: 100vh;
 }
 
-/* === HEADER === */
+/* HEADER */
 header {
     background: linear-gradient(to left, #00d5ff, #00ff77);
     color: black;
@@ -32,7 +32,7 @@ header {
     box-sizing: border-box;
 }
 
-/* === TEKS DALAM HEADER === */
+/* TEKS DALAM HEADER */
 .header-text {
     text-align: justify;
 }
@@ -48,7 +48,7 @@ header {
     line-height: 1.6;
 }
 
-/* === GAMBAR DALAM HEADER === */
+/* GAMBAR DALAM HEADER */
 .header-img {
     display: flex;
     justify-content: center;
@@ -61,7 +61,7 @@ header {
     border-radius: 10px;
 }
 
-/* === TEXT KEGIATAN (HEADER) === */
+/* TEXT KEGIATAN (HEADER) */
 .text-galeri h2 {
     font-size: 55px !important;
     font-weight: bold;
@@ -80,7 +80,7 @@ header {
 }
 
 
-/* === GAMBAR GALERI KEGIATAN === */
+/* GAMBAR GALERI KEGIATAN */
 .gambar {
     display: flex;
     justify-content: center;
@@ -116,7 +116,7 @@ header {
     text-align: left;
 }
 
-/* === WRAPPER UNTUK JADWAL DAN GAMBAR === */
+/* WRAPPER UNTUK JADWAL DAN GAMBAR */
 .jadwal-wrapper {
     display: flex;
     flex-direction: row-reverse;
@@ -126,14 +126,14 @@ header {
     flex-wrap: wrap;
 }
 
-/* === GAMBAR JADWAL PERTEMUAN === */
+/* GAMBAR JADWAL PERTEMUAN */
 #schedule img {
     width: 100%;
     max-width: 600px;
 }
 
 
-/* === JADWAL PERTEMUAN === */
+/* JADWAL PERTEMUAN */
 #jadwal {
     width: 100%;
     max-width: 700px;
@@ -184,13 +184,12 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Tambahkan ikon sebelum teks jadwal */
 #jadwal li::before {
     content: "📅";
     font-size: 22px;
 }
 
-/* === SUMBER BELAJAR (FOOTER STYLE) === */
+/* SUMBER BELAJAR (FOOTER STYLE) */
 #resources {
     color: rgb(0, 0, 0);
     padding: 30px;
@@ -203,7 +202,6 @@ header {
     margin: 40px 0;
 }
 
-/* === Styling untuk judul agar tetap di tengah === */
 #resources h3 {
     background-color: #007bff;
     color: white;
@@ -213,18 +211,14 @@ header {
     white-space: nowrap;
     font-size: 22px;
 }
-
-/* === FLEXBOX UNTUK LIST SUMBER BELAJAR === */
 .resources-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Biar sejajar */
+    justify-content: space-around;
     align-items: center;
     width: 100%;
-    gap: 30px; /* Jarak antar elemen */
+    gap: 30px;
 }
-
-/* === BOX INDIVIDUAL UNTUK SUMBER BELAJAR === */
 .resource-item {
     display: flex;
     flex-direction: column;
@@ -238,20 +232,15 @@ header {
     text-decoration: none; /* Hilangkan garis bawah link */
     color: black; /* Biar teks tetap hitam */
 }
-
 .resource-item:hover {
     transform: scale(1.05);
     background-color: #6ef9f2;
 }
-
-/* === STYLING GAMBAR === */
 .resource-item img {
     width: 80px;
     height: 80px;
     border-radius: 5px;
 }
-
-/* === STYLING LINK === */
 .resource-item a {
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -265,7 +254,7 @@ header {
     color: #00c3ff;
 }
 
-/* === WRAPPER UNTUK FORM DAN GAMBAR === */
+/* WRAPPER UNTUK FORM DAN GAMBAR */
 .join-wrapper {
     display: flex;
     justify-content: center;
@@ -274,8 +263,6 @@ header {
     gap: 3vw;
     margin-top: 140px;
 }
-
-/* === FORM PENDAFTARAN === */
 #join {
     background-color: #f9f9f9;
     padding: 20px;
@@ -286,8 +273,6 @@ header {
     margin-right: -94px;
     margin-top: 60px;
 }
-
-/* Styling untuk input */
 #join input {
     display: block;
     width: 90%;
@@ -296,8 +281,6 @@ header {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
-/* Styling untuk tombol */
 #join button {
     background-color: #007bff;
     color: white;
@@ -307,12 +290,11 @@ header {
     cursor: pointer;
     font-size: 16px;
 }
-
 #join button:hover {
     background-color: #0056b3;
 }
 
-/* === FOOTER (BAGIAN BAWAH WEBSITE) === */
+/* FOOTER (BAGIAN BAWAH WEBSITE) */
 footer {
     background-color: #222;
     color: white;
@@ -328,7 +310,7 @@ footer p {
     font-size: 16px;
 }
 
-/* === MEDIA QUERY UNTUK RESPONSIF === */
+/* MEDIA QUERY UNTUK RESPONSIF */
 @media (max-width: 768px) {
     .header-img {
         margin-left: 0;
